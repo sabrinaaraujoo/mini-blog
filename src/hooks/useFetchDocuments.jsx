@@ -3,13 +3,12 @@ import { db } from "../firebase/config";
 import {
   collection,
   query,
-  ordeBy,
+  orderBy,
   onSnpaoshot,
   where,
-  snapshotEqual,
+  onSnapshot,
   QuerySnapshot,
 } from "firebase/firestore";
-import { async } from "@firebase/util";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
   const [documents, setDocuments] = useState(null);
@@ -33,8 +32,8 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         // busca
         // dashborad
 
-        q = await query(collectionRef, ordeBy("createdAt", "desc"));
-        await onSnpaoshot(q, (querySnapshot) => {
+        q = await query(collectionRef, orderBy("createdAt", "desc"));
+        await onSnapshot(q, (querySnapshot) => {
           setDocuments(
             querySnapshot.docs.map((doc) => ({
               id: doc.id,
