@@ -3,8 +3,8 @@
 This project is a mini blog where users can create, edit, delete, view posts, search for content, and access other people's posts.
 
 ## Summary
-- [Technologies](#technologies)
-- [How to use](#how-to-use)
+- [Technologies](#-technologies)
+- [How to use](#-how-to-use)
 
 ---
 
